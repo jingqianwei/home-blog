@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'Home\HomeController@index')->name('home');
+
+// 博客路由
+Route::resource('blog', 'Home\BlogController');
