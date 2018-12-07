@@ -16,7 +16,7 @@ class CreateComments extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('content')->comment('内容');
+            $table->text('content')->comment('内容');
             $table->integer('blog_id')->comment('关联的博客id');
             $table->integer('user_id')->comment('关联的用户id');
             $table->timestamps();

@@ -11,6 +11,6 @@ class CommentTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(App\Models\Comment::class, 50)->create(); //向users表中插入50条模拟数据
     }
 }
