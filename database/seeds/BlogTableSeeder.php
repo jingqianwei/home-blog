@@ -11,6 +11,6 @@ class BlogTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Blog::class, 50)->create(); //向users表中插入50条模拟数据
+        factory(App\Models\Blog::class, 50)->create(); //向blogs表中插入50条模拟数据
     }
 }
