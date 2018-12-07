@@ -49,7 +49,10 @@
         <h3>评论</h3>
         <ul>
             @foreach ($comments as $comment)
-                <li><small>{{ $comment->userName() }} 评论说：</small>“ {{ $comment->content }} ”</li>
+                <li>
+                    <p>评论时间：{{ $comment->created_at }}</p>
+                    <small>{{ $comment->userName() }} 评论说：</small>“ {{ $comment->content }} ”
+                </li>
             @endforeach
         </ul>
     </div>
