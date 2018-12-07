@@ -64,8 +64,12 @@ class BlogController extends Controller
      */
     public function show(Blog $blog) //这里已经通过依赖注入的形式帮我们实例化了 $blog
     {
+        // 查询评论
+        $comments = $blog->comments;
+        // 视图渲染
         return view('blog.show', [
             'blog' => $blog, //直接将$blog传给视图进行渲染
+            'comments' => $comments, //把评论也传过去
         ]);
     }
 

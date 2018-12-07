@@ -26,4 +26,31 @@
             </div>
         </div>
     </div>
+    @include('components._error')
+    <form method="POST" action="{{ route('comment.store') }}">
+        @csrf
+        <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+        <input type="hidden" name="blog_id" value="{{ $blog->id }}">
+
+        <div class="form-group">
+            <label for="content"></label>
+            {{-- 样式里面加一个判断，判断是否有关于content的错误有的话给样式给文本域加一个红边边 --}}
+            <textarea id="content" class="form-control {{ $errors->has('content') ? ' is-invalid' : '' }}" cols="30" rows="10" name="content">你对文章有什么看法呢？</textarea>
+            {{-- 如果有错误，再显示一个小的错误提示信息 --}}
+            @if ($errors->has('content'))
+                <span class="invalid-feedback">
+                    <strong>{{ $errors->first('content') }}</strong>
+                </span>
+            @endif
+        </div>
+        <button class="btn btn-primary" type="submit">发表评论</button>
+    </form>
+    <div>
+        <h3>评论</h3>
+        <ul>
+            @foreach ($comments as $comment)
+                <li><small>{{ $comment->userName() }} 评论说：</small>“ {{ $comment->content }} ”</li>
+            @endforeach
+        </ul>
+    </div>
 @endsection

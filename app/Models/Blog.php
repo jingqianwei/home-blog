@@ -10,4 +10,9 @@ class Blog extends Model
     protected $fillable = [
         'title', 'content'
     ];
+
+    // 绑定1:n关系
+    public function comments() {
+        return $this->hasMany('App\Models\Comment'); // 1 hasMany n
+    }
 }

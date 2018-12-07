@@ -21,3 +21,6 @@ Route::get('/home', 'Home\HomeController@index')->name('home');
 
 // 博客路由
 Route::resource('blog', 'Home\BlogController');
+
+// 评论路由
+Route::resource('comment', 'Home\CommentController', ['only' => 'store']);
