@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('file');
 });
 
 Auth::routes();
@@ -24,3 +24,6 @@ Route::resource('blog', 'Home\BlogController');
 
 // 评论路由
 Route::resource('comment', 'Home\CommentController', ['only' => 'store']);
+
+// 上传文件测试接口
+Route::post('/file', 'Home\HomeController@file')->name('home.file');
