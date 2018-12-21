@@ -78,4 +78,33 @@ class HomeController extends Controller
 
         return $this->json(10003, '上传的文件不存在！');
     }
+
+    /**
+     * @throws \Exception
+     */
+    public function redisFile()
+    {
+        $lines = file_get_contents($_FILES['code']['tmp_name']);//获取文件内容
+        ini_set('memory_limit', '-1');//不要限制Mem大小，否则会报错
+        $line = explode("\r\n", $lines);//转换成数组
+        //实例化redis
+        $redis = new \Redis();
+        //连接
+        $redis->connect('127.0.0.1', 6379);
+        $redis->auth('123456'); //密码验证
+        $redis->multi();//开启管道, 让效率更高
+        if (!$redis) {
+            throw new \Exception('redis连接失败！', 1);
+        }
+        $key = 'batch_key';
+        $c = 0;
+        $count = count($line);
+        for ($i = 0; $i < $count; $i++) {
+            $res = $redis->hset($key, $line[$i], 1);
+            if ($res) {
+                $c++;
+            }
+        }
+        $redis->exec();
+    }
 }
