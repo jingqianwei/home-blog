@@ -62,10 +62,7 @@ class BaseModel
         if($sqlWhere){
             $sql.=" where $sqlWhere";
         }
-
-        dd($sql);
         $res = $this->query($sql);
-        dd($res->fetchAll(PDO::FETCH_ASSOC));
         $data['data'] = $res->fetchAll(PDO::FETCH_ASSOC);
         $data['info'] = array("dsn"=>$this->config->dsn,"dbname"=>$this->dbname,"table"=>$this->table,"sql"=>$sql);
         return $data;
