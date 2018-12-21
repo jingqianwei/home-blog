@@ -20,16 +20,16 @@ $config = array(
     ),
     // 分库分表
     'shared' => array(
-        'user' => array(
+        'library' => array(
             'host' => array(
                 /**
                  * 编号为 0 到 10 的库使用的链接配置
                  */
-                '0-10' => $default,
+                '0-4' => $default,
                 /**
                  * 编号为 11 到 28 的库使用的链接配置
                  */
-                '11-28' => $default,
+                '5-9' => $default,
                 /**
                  * 编号为 29 到 99 的库使用的链接配置
                  */
@@ -44,8 +44,8 @@ $config = array(
              *  (543234678 / 1) % 100 = 78 为编号为 78 的库
              *  (543234678 / 100) % 100 = 46 为编号为 46 的表
              */
-            'database_split' => array(1, 100),
-            'table_split' => array(100, 100),
+            'database_split' => array(1, 10),
+            'table_split' => array(10, 10),
         ),
     ),
 );

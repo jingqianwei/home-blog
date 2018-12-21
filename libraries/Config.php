@@ -66,7 +66,6 @@ class Config
             $the_config = $config['db'][$dbname];
         }
 
-        $sql = "CREATE DATABASE " . $this->dbname;
         $c = $the_config;
         if (isset($c['unix_socket']) && $c['unix_socket']) {
             $this->dsn = sprintf('mysql:dbname=%s;unix_socket=%s', $this->dbname, $c['unix_socket']);

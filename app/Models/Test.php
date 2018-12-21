@@ -12,6 +12,6 @@ use App\Model\BaseModel;
 
 class Test extends BaseModel
 {
-    protected $dbnamePrefix = 'user';
-    protected $tablePrefix = 'userinfo';
+    protected $dbnamePrefix = 'library';
+    protected $tablePrefix = 'user';
 }
