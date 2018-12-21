@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Models\Test;
+use Illuminate\Database\Schema\Blueprint;
 
 class UserController extends Controller
 {
@@ -36,17 +37,19 @@ class UserController extends Controller
            \DB::statement($sql);
             $sql = "create database library_{$i} default character set utf8mb4 collate utf8mb4_unicode_ci;";
             \DB::statement($sql);
+
             for($j=0;$j<10;$j++){		//10个表
                 $sql="drop table if exists user_{$j};";
                 \DB::statement($sql);
-                $sql="create table user_{$j}
-				(
-					id char(36) not null primary key,
-					name char(15) not null default '',
-					password char(32) not null default '',
-					sex char(1) not null default '男'
-				)engine=InnoDB;";
-                \DB::statement($sql);
+                // 创建数据表
+                \Schema::create('user_' . $j, function (Blueprint $table) {
+                    $table->char('id', 36);
+                    $table->char('name', 15)->default('');
+                    $table->char('password', 32)->default('');
+                    $table->char('sex', 1)->default('男');
+                    $table->primary('id');
+                    $table->engine = 'InnoDB';
+                });
             }
         }
     }
