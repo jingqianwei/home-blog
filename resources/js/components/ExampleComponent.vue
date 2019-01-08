@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card card-default">
-                    <div class="card-header">Example Component</div>
+                    <div class="card-header">{{ title }}</div>
 
                     <div class="card-body">
                         I'm an example component.
@@ -16,8 +16,11 @@
 
 <script>
     export default {
+        props: ['title'],
         mounted() {
-            console.log('Component mounted.')
+            // 两钟写法都可以
+            //console.log(this.$attrs.title)
+            console.log(this.title)
         }
     }
 </script>

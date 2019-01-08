@@ -13,9 +13,12 @@
                     <div v-if="flag" class="card-body">
                         条件渲染
                     </div>
-                    <div v-else class="card-body">
+                    <div v-else class="card-body" @click="add">
                         not
                     </div>
+                    <hr/>
+                    <!-- 父组件向子组件传值(值为变量) -->
+                    <example-component v-bind:title="message"></example-component>
                 </div>
             </div>
         </div>
@@ -23,7 +26,12 @@
 </template>
 
 <script>
+    import ExampleComponent from './components/ExampleComponent'
     export default {
+        // 组件注册
+        components: {
+            ExampleComponent
+        },
         // 初始化数据
         data() {
             return {
@@ -47,6 +55,9 @@
             reversedMessage: function () {
                 // `this` 指向vue实例
                 return this.message.split('').reverse().join('')
+            },
+            add: function () {
+                this.message = '点击事件'
             }
         }
     }
