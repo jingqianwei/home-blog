@@ -28,5 +28,4 @@ Route::resource('comment', 'Home\CommentController', ['only' => 'store']);
 // 上传文件测试接口
 Route::post('/file', 'Home\HomeController@redisFile')->name('home.file');
 
-
 Route::get('/test', 'Home\UserController@test');
