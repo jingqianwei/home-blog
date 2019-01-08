@@ -52,10 +52,13 @@
         },
         // 在组件中，使用方法， 在vue实例中使用computed()计算属性不用加括号
         methods: {
+            // 逻辑处理方法
             reversedMessage: function () {
                 // `this` 指向vue实例
                 return this.message.split('').reverse().join('')
             },
+
+            // 点击事件
             add: function () {
                 this.message = '点击事件'
             }
