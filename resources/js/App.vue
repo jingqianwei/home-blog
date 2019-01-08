@@ -10,6 +10,12 @@
                          v-bind:class="classObject">
                         {{ message }} {{ name }}
                     </div>
+                    <div v-if="flag" class="card-body">
+                        条件渲染
+                    </div>
+                    <div v-else class="card-body">
+                        not
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,7 +29,8 @@
             return {
                 message: 'Hello Laravel!',
                 name: '',
-                classObject: 'card'
+                classObject: 'card',
+                flag: false // 来定义内容是否展示
             }
         },
         // vue实例化后执行
