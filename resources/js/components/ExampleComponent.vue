@@ -18,7 +18,7 @@
     export default {
         props: ['title'],
         mounted() {
-            // 两钟写法都可以
+            // 两种写法都可以
             //console.log(this.$attrs.title)
             console.log(this.title)
         }
