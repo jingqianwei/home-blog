@@ -29,3 +29,7 @@ Route::resource('comment', 'Home\CommentController', ['only' => 'store']);
 Route::post('/file', 'Home\HomeController@redisFile')->name('home.file');
 
 Route::get('/test', 'Home\UserController@test');
+
+Route::get('/vue', function () {
+    return view('vue');
+});
