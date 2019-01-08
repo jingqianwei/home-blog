@@ -16,7 +16,10 @@
 
 <script>
     export default {
-        props: ['title'],
+        props: {
+            // 限定父组件传过来的参数类型
+            title: String
+        },
         mounted() {
             // 两种写法都可以
             //console.log(this.$attrs.title)
