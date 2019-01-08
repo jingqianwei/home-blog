@@ -22,5 +22,8 @@
         "sass-loader": "^7.1.0",
         "vue": "^2.5.21",
         "vue-template-compiler": "^2.5.21"
+    },
+    "dependencies": {
+        "element-ui": "^2.4.11"
     }
 }
