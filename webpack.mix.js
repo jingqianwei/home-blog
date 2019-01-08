@@ -13,5 +13,9 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
    .extract(['vue'])
-   .sass('resources/sass/app.scss', 'public/css')
-   .version();
+   .sass('resources/sass/app.scss', 'public/css');
+
+// 生产环境才加上版本号
+if (mix.inProduction()) {
+    mix.version();
+}
