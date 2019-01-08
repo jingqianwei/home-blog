@@ -17,5 +17,5 @@ mix.js('resources/js/app.js', 'public/js')
 
 // 生产环境才加上版本号
 if (mix.inProduction()) {
-    mix.version();
+    mix.version(); //加上版本号后，视图中引入的路径就要用mix()方法
 }
