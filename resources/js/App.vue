@@ -6,7 +6,8 @@
                     <div class="card-header">
                         {{ reversedMessage() }}
                     </div>
-                    <div class="card-body">
+                    <div class="card-body"
+                         v-bind:class="classObject">
                         {{ message }} {{ name }}
                     </div>
                 </div>
@@ -21,7 +22,8 @@
         data() {
             return {
                 message: 'Hello Laravel!',
-                name: ''
+                name: '',
+                classObject: 'card'
             }
         },
         // vue实例化后执行

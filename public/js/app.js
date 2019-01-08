@@ -3322,12 +3322,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   // 初始化数据
   data: function data() {
     return {
       message: 'Hello Laravel!',
-      name: ''
+      name: '',
+      classObject: 'card'
     };
   },
   // vue实例化后执行
@@ -85275,7 +85277,7 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [
+          _c("div", { staticClass: "card-body", class: _vm.classObject }, [
             _vm._v(
               "\n                    " +
                 _vm._s(_vm.message) +
