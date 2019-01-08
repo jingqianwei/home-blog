@@ -6,8 +6,11 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+import App from './App.vue';
+Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 
 /**
  * The following block of code may be used to automatically register your
@@ -29,5 +32,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    render: h => h(App)
 });
+
