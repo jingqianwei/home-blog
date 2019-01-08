@@ -3321,9 +3321,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  // 初始化数据
+  data: function data() {
+    return {
+      message: 'Hello Laravel!',
+      name: ''
+    };
+  },
+  // vue实例化后执行
+  created: function created() {
+    this.name = '哈哈哈';
+  },
+  // DOW加载完成后执行
   mounted: function mounted() {
+    //this.name = '嘻嘻嘻';
     console.log('Component mounted.');
+  },
+  // 在组件中，使用方法， 在vue实例中使用computed()计算属性不用加括号
+  methods: {
+    reversedMessage: function reversedMessage() {
+      // `this` 指向vue实例
+      return this.message.split('').reverse().join('');
+    }
   }
 });
 
@@ -85242,32 +85263,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card card-default" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v(
+              "\n                    " +
+                _vm._s(_vm.reversedMessage()) +
+                "\n                "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v(
+              "\n                    " +
+                _vm._s(_vm.message) +
+                " " +
+                _vm._s(_vm.name) +
+                "\n                "
+            )
           ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
