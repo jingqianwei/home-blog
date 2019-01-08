@@ -9396,7 +9396,7 @@ for (var i = 0; i < DOMIterables.length; i++) {
 
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/element-ui/lib/theme-chalk/index.css":
 /*!*******************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/postcss-loader/src??ref--6-2!./node_modules/element-ui/lib/theme-chalk/index.css ***!
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/postcss-loader/src??ref--7-2!./node_modules/element-ui/lib/theme-chalk/index.css ***!
   \*******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -48507,7 +48507,7 @@ module.exports = "/fonts/vendor/element-ui/lib/theme-chalk/element-icons.woff?2f
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../css-loader??ref--6-1!../../../postcss-loader/src??ref--6-2!./index.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/element-ui/lib/theme-chalk/index.css");
+var content = __webpack_require__(/*! !../../../css-loader??ref--7-1!../../../postcss-loader/src??ref--7-2!./index.css */ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./node_modules/element-ui/lib/theme-chalk/index.css");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -85531,15 +85531,27 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/sass/vue.scss":
+/*!*********************************!*\
+  !*** ./resources/sass/vue.scss ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/vue.scss ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\phpStudy\WWW\home-blog\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\phpStudy\WWW\home-blog\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\phpStudy\WWW\home-blog\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\phpStudy\WWW\home-blog\resources\sass\vue.scss */"./resources/sass/vue.scss");
 
 
 /***/ })

@@ -13,7 +13,8 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
    .extract(['vue'])
-   .sass('resources/sass/app.scss', 'public/css');
+   .sass('resources/sass/app.scss', 'public/css')
+   .sass('resources/sass/vue.scss', 'public/css'); // 测试用的样式
 
 // 生产环境才加上版本号
 if (mix.inProduction()) {
