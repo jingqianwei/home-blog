@@ -3332,6 +3332,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   // 组件注册
@@ -3344,6 +3346,7 @@ __webpack_require__.r(__webpack_exports__);
       message: 'Hello Laravel!',
       name: '',
       classObject: 'card',
+      // 绑定动态属性
       flag: false // 来定义内容是否展示
 
     };
@@ -3359,10 +3362,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   // 在组件中，使用方法， 在vue实例中使用computed()计算属性不用加括号
   methods: {
+    // 逻辑处理方法
     reversedMessage: function reversedMessage() {
       // `this` 指向vue实例
       return this.message.split('').reverse().join('');
     },
+    // 点击事件
     add: function add() {
       this.message = '点击事件';
     }
@@ -3397,9 +3402,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['title'],
+  props: {
+    // 限定父组件传过来的参数类型
+    title: String
+  },
   mounted: function mounted() {
-    // 两钟写法都可以
+    // 两种写法都可以
     //console.log(this.$attrs.title)
     console.log(this.title);
   }
@@ -85595,6 +85603,13 @@ var app = new Vue({
   el: '#app',
   render: function render(h) {
     return h(_App_vue__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  },
+  computed: {
+    // 计算属性的 getter
+    reversedMessage: function reversedMessage() {
+      // `this` 指向 app 实例
+      return this.message.split('').reverse().join('');
+    }
   }
 });
 

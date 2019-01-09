@@ -33,6 +33,13 @@ Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
 
 const app = new Vue({
     el: '#app',
-    render: h => h(App)
+    render: h => h(App),
+    computed: {
+        // 计算属性的 getter
+        reversedMessage: function () {
+            // `this` 指向 app 实例
+            return this.message.split('').reverse().join('')
+        }
+    }
 });
 

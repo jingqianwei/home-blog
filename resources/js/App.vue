@@ -4,6 +4,7 @@
             <div class="col-md-8">
                 <div class="card card-default">
                     <div class="card-header">
+                        <!-- methods 方法 -->
                         {{ reversedMessage() }}
                     </div>
                     <div class="card-body"
@@ -37,7 +38,7 @@
             return {
                 message: 'Hello Laravel!',
                 name: '',
-                classObject: 'card',
+                classObject: 'card', // 绑定动态属性
                 flag: false // 来定义内容是否展示
             }
         },
