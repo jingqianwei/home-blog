@@ -16,9 +16,6 @@
 
 <script>
     export default {
-        data() {
-            // 用于merge和rebase测试用的
-        },
         props: {
             // 限定父组件传过来的参数类型
             title: String
