@@ -24,9 +24,6 @@
             // 两种写法都可以
             //console.log(this.$attrs.title)
             console.log(this.title)
-        },
-        methods: {
-            // 用与test分支测试
         }
     }
 </script>
