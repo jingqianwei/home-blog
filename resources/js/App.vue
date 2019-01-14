@@ -20,6 +20,12 @@
                     <hr/>
                     <!-- 父组件向子组件传值(值为变量) -->
                     <example-component v-bind:title="message"></example-component>
+                    <hr />
+                    <ul>
+                        <li v-for="(item, index) of items">
+                            {{ parentMessage }} - {{ index }} - {{ item.message }}
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -39,7 +45,12 @@
                 message: 'Hello Laravel!',
                 name: '',
                 classObject: 'card', // 绑定动态属性
-                flag: false // 来定义内容是否展示
+                flag: false, // 来定义内容是否展示
+                items: [
+                    {message: 'Foo'},
+                    {message: 'Boo'},
+                ],
+                parentMessage: 'Parent'
             }
         },
         // vue实例化后执行
