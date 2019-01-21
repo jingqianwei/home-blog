@@ -3334,6 +3334,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   // 组件注册
@@ -3347,8 +3354,15 @@ __webpack_require__.r(__webpack_exports__);
       name: '',
       classObject: 'card',
       // 绑定动态属性
-      flag: false // 来定义内容是否展示
-
+      flag: false,
+      // 来定义内容是否展示
+      items: [{
+        message: 'Foo'
+      }, {
+        message: 'Boo'
+      }],
+      parentMessage: 'Parent',
+      numbers: [1, 2, 3, 4, 5]
     };
   },
   // vue实例化后执行
@@ -3370,6 +3384,12 @@ __webpack_require__.r(__webpack_exports__);
     // 点击事件
     add: function add() {
       this.message = '点击事件';
+    },
+    // 筛选偶数
+    even: function even(numbers) {
+      return numbers.filter(function (number) {
+        return number % 2 === 0;
+      });
     }
   }
 });
@@ -85365,7 +85385,33 @@ var render = function() {
             _vm._v(" "),
             _c("hr"),
             _vm._v(" "),
-            _c("example-component", { attrs: { title: _vm.message } })
+            _c("example-component", { attrs: { title: _vm.message } }),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c(
+              "ul",
+              [
+                _vm._l(_vm.items, function(item, index) {
+                  return _c("li", [
+                    _vm._v(
+                      "\n                        " +
+                        _vm._s(_vm.parentMessage) +
+                        " - " +
+                        _vm._s(index) +
+                        " - " +
+                        _vm._s(item.message) +
+                        "\n                    "
+                    )
+                  ])
+                }),
+                _vm._v(" "),
+                _vm._l(_vm.even(_vm.numbers), function(n) {
+                  return _c("li", [_vm._v(_vm._s(n))])
+                })
+              ],
+              2
+            )
           ],
           1
         )

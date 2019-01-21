@@ -20,6 +20,13 @@
                     <hr/>
                     <!-- 父组件向子组件传值(值为变量) -->
                     <example-component v-bind:title="message"></example-component>
+                    <hr />
+                    <ul>
+                        <li v-for="(item, index) of items">
+                            {{ parentMessage }} - {{ index }} - {{ item.message }}
+                        </li>
+                        <li v-for="n in even(numbers)">{{ n }}</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -39,7 +46,13 @@
                 message: 'Hello Laravel!',
                 name: '',
                 classObject: 'card', // 绑定动态属性
-                flag: false // 来定义内容是否展示
+                flag: false, // 来定义内容是否展示
+                items: [
+                    {message: 'Foo'},
+                    {message: 'Boo'},
+                ],
+                parentMessage: 'Parent',
+                numbers: [ 1, 2, 3, 4, 5 ]
             }
         },
         // vue实例化后执行
@@ -62,6 +75,13 @@
             // 点击事件
             add: function () {
                 this.message = '点击事件'
+            },
+
+            // 筛选偶数
+            even: function (numbers) {
+                return numbers.filter(function (number) {
+                    return number % 2 === 0;
+                })
             }
         }
     }
