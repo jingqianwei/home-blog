@@ -33,3 +33,13 @@ Route::get('/test', 'Home\UserController@test');
 Route::get('/vue', function () {
     return view('vue');
 });
+
+
+Route::get('/test/db', function () {
+    // 使用自定义函数，对应在test数据库中
+    $sql = "select id_nextval('order_id') as order_id LIMIT 1";
+    $res = DB::select($sql);
+    foreach ($res as $val) {
+        echo $val->order_id;
+    }
+});
