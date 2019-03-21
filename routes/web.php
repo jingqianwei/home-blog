@@ -34,6 +34,8 @@ Route::get('/vue', function () {
     return view('vue');
 });
 
+Route::get('/time', 'Home\UserController@getMillisecond');
+
 
 Route::get('/test/db', function () {
     // 使用自定义函数，对应在test数据库中

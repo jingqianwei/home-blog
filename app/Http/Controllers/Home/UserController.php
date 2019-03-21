@@ -16,7 +16,11 @@ class UserController extends Controller
 {
     public function test()
     {
-
+        $arr = [
+            'appkey' => 111,
+            'timestamp' => 222,
+            'sign' => 333,
+        ];
 //        $userId=$this->create_uuid();
 //        $user = new Test($userId);
 //        $data=array('id'=>$userId,'name'=>'大明'.$userId,'password'=>'14e1b600b1fd579f47433b88e8d85291','sex'=>'男');
@@ -52,6 +56,25 @@ class UserController extends Controller
                 });
             }
         }
+    }
+
+    public function getMillisecond()
+    {
+        $arr = ['php', 'java', 'python', 'go'];
+        $res = array_flip($arr);
+
+        dd($res);
+        $str = microtime(); // 不加true返回字符串，微秒 秒
+        list($s1, $s2) = explode(' ', $str);
+        $second = (float)$s1 + (float)$s2; // 返回的是，秒(小数)，秒(整数)
+        $millisecond = $second * 1000; // 把当前的秒转化为毫秒，结果还是浮点型带一位小数
+        // 把浮点型写入字符串中且让小数点的长度为0，及舍去小数点后的值
+        //sprintf('%.0f', $millisecond); 会遵循小数部分的四舍五入
+        dd((int)$millisecond);
+
+        list($s1, $s2) = explode(' ', microtime());
+
+        return (int)((floatval($s1) + floatval($s2)) * 1000);
     }
 
 
